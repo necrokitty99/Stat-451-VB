@@ -1,0 +1,32 @@
+Game Number,Opponent,Outcome (Char),Outcome (Binary),Cumulative Wins
+1,UTEP,L,0,0
+2,Southeastern La.,W,1,1
+3,Grambling,W,1,2
+4,Long Beach St. ,W,1,3
+5,Indiana,W,1,4
+6,Memphis,W,1,5
+7,UNLV,W,1,6
+8,FIU,W,1,7
+9,Cal Poly,W,1,8
+10,Pepperdine,L,0,8
+11,Saint Mary's (CA) ,W,1,9
+12,Washington St. ,L,0,9
+13,Arizona St. ,L,0,9
+14,Oregon,L,0,9
+15,Oregon St. ,W,1,10
+16,Stanford,L,0,10
+17,California,W,1,11
+18,Colorado,W,1,12
+19,Utah ,W,1,13
+20,UCLA,L,0,13
+21,Southern California,L,0,13
+22,Oregon St. ,L,0,13
+23,Oregon,L,0,13
+24,California,W,1,14
+25,Stanford,L,0,14
+26,Southern California,L,0,14
+27,UCLA,L,0,14
+28,Utah ,W,1,15
+29,Colorado,L,0,15
+30,Arizona,W,1,16
+31,Washington St. ,L,0,16

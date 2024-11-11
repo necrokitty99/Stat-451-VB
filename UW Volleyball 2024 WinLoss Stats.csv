@@ -1,0 +1,25 @@
+Game Number,Opponent,Outcome (Char),Outcome (Binary),Cumulative Wins
+1,Montana St.,W,1,1
+2,Middle Tenn.,W,1,2
+3,Fresno St. ,W,1,3
+4,Georgia,W,1,4
+5,Colorado,W,1,5
+6,Washington St.,W,1,6
+7,UC Davis,W,1,7
+8,Oregon St.,W,1,8
+9,Long Beach St.,W,1,9
+10,Pepperdine,W,1,10
+11,Indiana,W,1,11
+12,Illinois,W,1,12
+13,Iowa,W,1,13
+14,Wisconsin,L,0,13
+15,UCLA,L,0,13
+16,Oregon,L,0,13
+17,Michigan,L,0,13
+18,Michigan St.,W,1,14
+19,Rutgers,W,1,15
+20,Maryland,W,1,16
+21,Oregon,W,1,17
+22,Southern California,L,0,17
+23,Minnesota,W,1,18
+24,Nebraska,L,0,18
