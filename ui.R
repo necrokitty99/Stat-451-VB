@@ -21,13 +21,16 @@ fluidPage(
                br(),
                
                h4("What is UW's Win/Loss Count?"),
-               p("blah blah blah"),
+               p("By compiling an additional set of dataframes comprised of match data from the 2023 and 2024 seasons, we can end our analysis on a wider note. 
+                 Simply asking, is the team encountering more, or less success? By comparing these statistics, and factoring in our previous analysis of more
+                 specific variables, we can gain a start-to-finish view of the teams progression."),
                br(),
                
                h2("About the data"),
                br(),
                
                p("the data came from....."),
+               # Win/Loss statistics were gathered from https://gohuskies.com/sports/womens-volleyball/, with no data added when compiling into a streamlined CSV file. 
                
                p("When discussing the results of this data...."),
                br()
