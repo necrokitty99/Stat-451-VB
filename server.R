@@ -3,6 +3,7 @@ library(ggplot2)
 library(gridExtra)
 library(cowplot)
 
+# Chart 1/2 Data
 vball <- read.csv("UWVBStats.csv")
 
 teamStats <- vball %>% filter(Players == 'Team')
@@ -16,3 +17,6 @@ function(input, output) {
   
   
 }
+
+# Chart 3 Data
+# tba
