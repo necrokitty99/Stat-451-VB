@@ -48,6 +48,7 @@ fluidPage(
     tabPanel("Chart 3",
              h1("Comparing UW's Win-loss from 2023 to 2024"),
              p("fill this in Later...."),
+             plotOutput("WinLoss")
              ),
     tabPanel("Summary",
              h2("Key Takeaways/Conclusion")
