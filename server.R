@@ -46,7 +46,62 @@ WinLoss23 <- read.csv("UW Volleyball 2023 WinLoss Stats.csv")
 
 function(input, output) {
   # Chart 1 Code
-
+  output$graph1 <- renderPlotly({
+    # Initialize plot to NULL
+    plot <- NULL
+    
+    # Check which statistic is selected and create the plot accordingly
+    if (input$statistic == 'Attacking Efficiency') {
+      plot <- ggplot(data = teamStats, aes(x = Year, y = Eff, fill = Year)) + 
+        geom_bar(stat = "identity", position = "dodge", color = "black", fill = c("yellow", "purple")) + 
+        ylab("Attacking Efficiency") + 
+        labs(title = "Attacking Efficiency Over Time") +
+        scale_y_continuous(breaks = seq(0, 0.4, by = 0.05), limits = c(0, 0.4)) +
+        theme_minimal(base_size = 10) +
+        theme(
+          plot.title = element_text(size = 16, face = "bold"),
+          axis.text.x = element_text(angle = 45, hjust = 1)
+        ) 
+      
+    } else if (input$statistic == 'Passing Efficiency') {
+      plot <- ggplot(data = teamStats, aes(x = Year, y = Pass.Average, fill = Year)) + 
+        geom_bar(stat = "identity", position = "dodge", color = "black", fill = c("yellow", "purple")) + 
+        ylab("Average Passing (3-pt Scale)") + 
+        labs(title = "Passing Efficiency Over Time") +
+        scale_y_continuous(breaks = seq(0, 3, by = 1), limits = c(0, 3)) + 
+        theme_minimal(base_size = 10) +
+        theme(
+          plot.title = element_text(size = 16, face = "bold"),
+          axis.text.x = element_text(angle = 45, hjust = 1)
+        )
+      
+    } else if (input$statistic == 'Ace Percentage') {
+      plot <- ggplot(data = teamStats, aes(x = Year, y = Ace.Percentage, fill = Year)) + 
+        geom_bar(stat = "identity", position = "dodge", color = "black", fill = c("yellow", "purple")) + 
+        ylab("Ace Percentage (%)") + 
+        labs(title = "Ace Percentage Over Time") +
+        scale_y_continuous(breaks = seq(0, 50, by = 5), limits = c(0, 50)) + 
+        theme_minimal(base_size = 10) +
+        theme(
+          plot.title = element_text(size = 16, face = "bold"),
+          axis.text.x = element_text(angle = 45, hjust = 1)
+        )
+    }
+    
+    # Convert the ggplot object to a plotly object for interactivity
+    ggplotly(plot, tooltip = c("x", "y"))  
+  })
+  output$dynamicCaption <- renderUI({
+    if (input$statistic == "Attacking Efficiency") {
+      p("The team has a higher attacking efficiency in 2024 compared to 2023. This means the team is scoring more efficiently on their attacking.
+        Comparing to other teams in the NCAA, in 2024, UW is in the top 75, while in 2023, they were in the top 130.")
+    } else if (input$statistic == "Passing Efficiency") {
+      p("The team has a slightly higher passing efficiency in 2024 compared to 2023. However, the difference isn't enough to show a huge change. 
+        Both seasons, the team passed just slightly better than medium on average.")
+    } else if (input$statistic == "Ace Percentage") {
+      p("The team has a slighly higher ace percentage in 2023 than in 2024. However, with the difference being so slight, the team is scoring similarly through their serving.")
+    }
+  })
   # Chart 2 Code
   output$opponent_data <- renderPlot({
     ggplot(attack_data_long2, aes(x = Play, y = Value, fill = Metric)) +
