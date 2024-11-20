@@ -2,18 +2,25 @@ library(tidyverse)
 
 fluidPage(
   navbarPage(
-    titlePanel("Comparing UW Volleyball from 2023 to 2024 Seasons"),
+    titlePanel("UW Volleyball: Analyzing the 2023 and 2024 Seasons"),
       
       tabPanel("Introduction",
                
                h2("Major Questions"),
                br(),
                
-               p("The primary goal......"),
+               p("The primary goal of this project is to analyze and compare the University of Washington Volleyball Team from the 2023 to 2024 season. 
+                 There are many different statistics in the sport of volleyball, so the statistics looked at show a good look at how the team compares, but is not comprehensive."),
                br(),
                
-               h4("How does UW Volleyball compare in key Statistics from 2023 to 2024"),
-               p("blah blah blah"),
+               withMathJax(),
+               h4("Chart 1: How does UW Volleyball Compare in Key Statistics from 2023 to 2024?"),
+               p("To begin comparing the 2023 team and 2024 team, one must look at key statistics in volleyball. The three statistics we decided to look at are 
+                    attacking efficiency, passing effciency, and ace percentage."),
+                p("Attacking Efficiency  is calculated by \\(\\frac{\\text{number of kills - number of errors}}{\\text{attacking attempts}}\\), and depicts how well a team is hitting the ball."), 
+                p("Passing efficiency  is rated on a 3 point scale defined as: 3pt - Perfect/Good, 2pt - Medium, 1pt - Bad, 0pt - Aced. This determines how well a team is receiving a serve."),
+                p("Ace Percentage is the amount of aces a team gets divided by the total number of serves.
+                 An ace is defined by the ball either hitting the floor on a serve or it is unable to be played past the first contact off of the serve."),
                br(),
                
                h4("What are UW Weakest Defending Points?"),
@@ -28,19 +35,35 @@ fluidPage(
                
                h2("About the data"),
                br(),
+               # Win/Loss statistics were gathered from https://gohuskies.com/sports/womens-volleyball/, with no data added when compiling into a streamlined CSV file.
+               p("This data was collected directly from the UW Volleyball Team Technical Coordinator. 
+                 During each match it is live coded for all contacts, and then cleaned following the match for accuracy."),
                
-               p("the data came from....."),
-               # Win/Loss statistics were gathered from https://gohuskies.com/sports/womens-volleyball/, with no data added when compiling into a streamlined CSV file. 
-               
-               p("When discussing the results of this data...."),
+               p("When discussing the results of this data, it is important to note that this data is collected through similar points in the 
+                 2023 and 2024 season. The match data for 2023 is collected from August 25th - October 29th, which was 23 matches.
+                 The match data for 2024 is collected from August 30th - October 30th, which was 15 matches. However, with scheduling and conference changing,
+                 there is less data for the 2024 season, so while we have a good look, we do not have a comprehensive comparison."),
                br()
           ),
     # make different options to choose which stats to look at 
     # show average option
-    tabPanel("Chart 1",
-             h1("How does UW Compare in key stats from 2023 - 2023"),
-             p("fill this in later....."),
-             ),
+    tabPanel("Key Stats",
+             h1("How does UW Compare in key stats from 2023 - 2024?"),
+             p("These charts will show the key statistics for UW Vollyball from 2023 - 2024. "),
+             sidebarLayout(
+               sidebarPanel(
+                 h3("Select a Statistic"),
+                 selectInput(
+                   inputId = "statistic",
+                   label = "Statistic",
+                   choices = c("Attacking Efficiency","Passing Efficiency","Ace Percentage"),
+                   selected = "Attacking Efficiency",
+                  )
+               ),
+               mainPanel(plotlyOutput("graph1"),
+                         uiOutput("dynamicCaption")),
+          ),
+    ),
     tabPanel("Chart 2",
              h1("What are UW's weakest defending points?"),
              p("Fill this in later....."),
