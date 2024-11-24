@@ -17,10 +17,19 @@ fluidPage(
                h4("Chart 1: How does UW Volleyball Compare in Key Statistics from 2023 to 2024?"),
                p("To begin comparing the 2023 team and 2024 team, one must look at key statistics in volleyball. The three statistics we decided to look at are 
                     attacking efficiency, passing effciency, and ace percentage."),
-                p("Attacking Efficiency  is calculated by \\(\\frac{\\text{number of kills - number of errors}}{\\text{attacking attempts}}\\), and depicts how well a team is hitting the ball."), 
-                p("Passing efficiency  is rated on a 3 point scale defined as: 3pt - Perfect/Good, 2pt - Medium, 1pt - Bad, 0pt - Aced. This determines how well a team is receiving a serve."),
-                p("Ace Percentage is the amount of aces a team gets divided by the total number of serves.
-                 An ace is defined by the ball either hitting the floor on a serve or it is unable to be played past the first contact off of the serve."),
+               tags$ul(
+                 tags$li("Attacking Efficiency  is calculated by \\(\\frac{\\text{number of kills - number of errors}}{\\text{attacking attempts}}\\), and depicts how well a team is hitting the ball"), 
+                 tags$li("Passing efficiency  is rated on a 3 point scale defined as: ",
+                      tags$ul(
+                        tags$li("3 pt - Perfect/Good"),
+                        tags$li("2 pt - Medium"),
+                        tags$li("1 pt - Bad"),
+                        tags$li("0 pt - Aced")
+                      ),
+                      "This determines how well a team is receiving a serve."),
+                 tags$li("Ace Percentage is the amount of aces a team gets divided by the total number of serves.
+                 An ace is defined by the ball either hitting the floor on a serve or it is unable to be played past the first contact off of the serve")
+               ),
                br(),
                
                h4("What are UW Weakest Defending Points?"),
