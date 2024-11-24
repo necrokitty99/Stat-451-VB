@@ -81,11 +81,11 @@ fluidPage(
              h1("What are UW's weakest defending points?"),
              p("Fill this in later....."),
              ),
-    tabPanel("Wins and Losses",
-             h1("Comparing UW's Win-loss from 2023 to 2024"),
-             p("This chart demonstrates the difference in how the season has gone in both the current season, and last years season."),
-             plotOutput("WinLoss")
-             ),
+    tabPanel("Season Results",
+             h1("How has the team performed overall this season?"),
+             p("This chart compares the wins and losses of the UW Volleyball team between 2023 - 2024. "),
+               mainPanel(plotlyOutput("WinLoss")),
+            ),
     tabPanel("Summary",
              h2("Conclusion"),
              p("Overall, looking at the key stats and win losses, the UW Volleyball team is looking to have a better season in 2024 compared to 2023.
