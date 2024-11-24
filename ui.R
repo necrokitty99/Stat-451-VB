@@ -3,7 +3,7 @@ library(shiny)
 library(bslib)
 
 fluidPage(
-  theme = bs_theme(bootswatch = "cerulean")
+  theme = bs_theme(bootswatch = "cerulean"),
   navbarPage(
     titlePanel("UW Volleyball: Analyzing the 2023 and 2024 Seasons"),
       
