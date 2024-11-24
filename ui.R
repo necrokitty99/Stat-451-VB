@@ -70,7 +70,7 @@ fluidPage(
              ),
     tabPanel("Chart 3",
              h1("Comparing UW's Win-loss from 2023 to 2024"),
-             p("fill this in Later...."),
+             p("This chart demonstrates the difference in how the season has gone in both the current season, and last years season."),
              plotOutput("WinLoss")
              ),
     tabPanel("Summary",
