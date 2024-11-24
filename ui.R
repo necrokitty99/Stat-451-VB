@@ -30,7 +30,8 @@ fluidPage(
                h4("What is UW's Win/Loss Count?"),
                p("By compiling an additional set of dataframes comprised of match data from the 2023 and 2024 seasons, we can end our analysis on a wider note. 
                  Simply asking, is the team encountering more, or less success? By comparing these statistics, and factoring in our previous analysis of more
-                 specific variables, we can gain a start-to-finish view of the teams progression."),
+                 specific variables, we can gain a start-to-finish view of the teams progression.
+                 Additionally included is the opponent for each game, for further reading."),
                br(),
                
                h2("About the data"),
