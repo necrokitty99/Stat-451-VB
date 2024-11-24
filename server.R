@@ -145,10 +145,10 @@ function(input, output) {
       theme(legend.title = element_blank())
   }
   # Chart 3 Code
-  output$WinLoss <- renderPlot({
+  output$WinLoss <- renderPlotly({
     plot1 <- ggplot() + 
-      geom_line(data=VB24, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2024), label=Opponent), size=1) + 
-      geom_line(data=VB23, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2023), label=Opponent), size=1) +
+      geom_line(data=WinLoss24, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2024), label=Opponent), size=1) + 
+      geom_line(data=WinLoss23, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2023), label=Opponent), size=1) +
       scale_color_manual(name="Year", values=c("2024"="purple", "2023"="gold")) +
       scale_x_continuous(n.breaks=16) +
       scale_y_continuous(n.breaks=18) +
