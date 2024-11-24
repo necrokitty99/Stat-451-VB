@@ -114,13 +114,17 @@ function(input, output) {
 
   # Chart 3 Code
   output$WinLoss <- renderPlot({
-    ggplot() + 
-    geom_line(data=VB24, aes(x=Game.Number, y=Cumulative.Wins, color="2024"), linewidth=1) + 
-    geom_line(data=VB23, aes(x=Game.Number, y=Cumulative.Wins, color="2023"), linewidth=1) +
-    scale_color_manual(name = "Year", values = c("2024" = "blue", "2023" = "red")) +
-    scale_x_continuous(n.breaks=16) + scale_y_continuous(n.breaks=18) + 
-    xlab("Game Number") + ylab("Cumulative Wins in Season") +
-    labs(title="Total Wins Through Season")
+    plot1 <- ggplot() + 
+      geom_line(data=VB24, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2024), label=Opponent), size=1) + 
+      geom_line(data=VB23, aes(x=Game.Number, y=Cumulative.Wins, color=factor(2023), label=Opponent), size=1) +
+      scale_color_manual(name="Year", values=c("2024"="purple", "2023"="gold")) +
+      scale_x_continuous(n.breaks=16) +
+      scale_y_continuous(n.breaks=18) +
+      xlab("Game Number") +
+      ylab("Cumulative Wins in Season") +
+      labs(title="Total Wins Through Season")
+
+  ggplotly(plot1, tooltip=c("x", "y", "label"))
   })
     
 }
