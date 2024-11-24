@@ -75,8 +75,18 @@ fluidPage(
              plotOutput("WinLoss")
              ),
     tabPanel("Summary",
-             h2("Key Takeaways/Conclusion")
-             )
+             h2("Conclusion"),
+             p("Overall, looking at the key stats and win losses, the UW Volleyball team is looking to have a better season in 2024 compared to 2023.
+               They have a higher attacking efficiency, higher passing efficiency, and more wins than in 2023. 
+               This could be do to a number of reasons such as:"),
+               tags$ul(
+                 tags$li("Roster Expansion: the addition of new recruits and transfers to the team"),
+                 tags$li("Conference Realignment: UW moved to the Big Ten from the Pac 12"),
+                 tags$li("Injury Prevention and Recovery"),
+                 tags$li("Improvements during Spring Training"),
+               ),
+               p("While we are not looking at the data from the whole season, it seems that
+               UW is trending towards a more successful season compared to 2023. ")
   )
   )
   
