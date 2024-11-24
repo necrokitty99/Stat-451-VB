@@ -99,6 +99,7 @@ fluidPage(
                ),
                p("While we are not looking at the data from the whole season, it seems that
                UW is trending towards a more successful season compared to 2023. ")
+             )
   )
   )
   
