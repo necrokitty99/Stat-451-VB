@@ -5,6 +5,7 @@ library(cowplot)
 library(dplyr)
 library(stringr)
 library(reshape2)
+library(plotly)
 library(shiny)
 
 #opponent attack type data
