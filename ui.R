@@ -35,9 +35,9 @@ fluidPage(
                
                h2("About the data"),
                br(),
-               # Win/Loss statistics were gathered from https://gohuskies.com/sports/womens-volleyball/, with no data added when compiling into a streamlined CSV file.
                p("This data was collected directly from the UW Volleyball Team Technical Coordinator. 
-                 During each match it is live coded for all contacts, and then cleaned following the match for accuracy."),
+                 During each match it is live coded for all contacts, and then cleaned following the match for accuracy.
+                 Additional data was gathered from the UW Volleyball website: gohuskies.com/sports/womens-volleyball/."),
                
                p("When discussing the results of this data, it is important to note that this data is collected through similar points in the 
                  2023 and 2024 season. The match data for 2023 is collected from August 25th - October 29th, which was 23 matches.
