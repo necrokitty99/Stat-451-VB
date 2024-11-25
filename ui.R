@@ -36,7 +36,7 @@ fluidPage(
                br(),
                
                h4("What are UW Weakest Defending Points?"),
-               p("blah blah blah"),
+               p(),
                br(),
                
                h4("What is UW's Win/Loss Count?"),
@@ -79,7 +79,8 @@ fluidPage(
     ),
     tabPanel("Defense",
              h1("What are UW's weakest defending points?"),
-             p("Fill this in later....."),
+             p("The analysis highlights that UW Women’s Volleyball team struggles the most in defending against certain play types executed by their opponents. 
+               Specifically, in both the 2023 and 2024 seasons, the Quick and Gap plays consistently demonstrate high attacking efficiency (41.7% and 31.4% in 2023; 27.3% and 32.7% in 2024) "),
              ),
     tabPanel("Season Results",
              h1("How has the team performed overall this season?"),
