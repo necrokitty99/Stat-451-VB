@@ -60,7 +60,7 @@ teamStats <- teamStats %>% mutate(Ace.Percentage = as.numeric(gsub("%", "", Ace.
 WinLoss24 <- read.csv("downloads/UW Volleyball 2024 WinLoss Stats.csv")
 WinLoss23 <- read.csv("downloads/UW Volleyball 2023 WinLoss Stats.csv")
 
-function(input, output) {
+server<- function(input, output) {
   # Chart 1 Code
   output$graph1 <- renderPlotly({
     # Initialize plot to NULL
@@ -107,6 +107,7 @@ function(input, output) {
     # Convert the ggplot object to a plotly object for interactivity
     ggplotly(plot, tooltip = c("x", "y"))  
   })
+ ####
   output$dynamicCaption <- renderUI({
     if (input$statistic == "Attacking Efficiency") {
       p("The team has a higher attacking efficiency in 2024 compared to 2023. This means the team is scoring more efficiently on their attacking.
@@ -118,15 +119,16 @@ function(input, output) {
       p("The team has a slighly higher ace percentage in 2023 than in 2024. However, with the difference being so slight, the team is scoring similarly through their serving.")
     }
   })
+ ####
   # Chart 2 Code
-  output$opponent_data <- renderPlotly({
+  output$Defense <- renderPlotly({
     if (input$Year == "2023") {
       gg_2023 <- ggplot(attack_data_long2_2023, aes(x = Play, y = Value, fill = Metric)) +
         geom_bar(stat = "identity", position = "dodge") +
         labs(title = "Opponent Weakness by Play Type (2023)", x = "Play Type", y = "Value (%)") +
         scale_fill_manual(values = c("skyblue", "orange", "purple")) +
         theme_minimal()
-      ggplotly(gg_2023)
+      ggplotly(gg_2023,)
     } else if (input$Year == "2024") {
       gg_2024 <- ggplot(attack_data_long2_2024, aes(x = Play, y = Value, fill = Metric)) +
         geom_bar(stat = "identity", position = "dodge") +
